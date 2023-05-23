@@ -578,7 +578,7 @@ async def play(_, message: Message):
     if await is_active_chat(message.chat.id):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
-            photo="https://graph.org/file/16ad8802968697be7d4e7.jpg",
+            photo="https://graph.org/file/5ec87b6ddca7485cf6a63.mp4",
             caption="**[- تم ضفتها الى قائمه الانتظار.]({})**\n\n**- طلب من الحلو : {}**\n**- تم ضفتها الى قائمه الانتظار : {}**".format(
                 url,
                 message.from_user.mention(),
@@ -605,14 +605,14 @@ async def play(_, message: Message):
         await music_on(message.chat.id)
         await add_active_chat(message.chat.id)
         await message.reply_photo(
-            photo="https://graph.org/file/16ad8802968697be7d4e7.jpg",
+            photo="https://graph.org/file/5ec87b6ddca7485cf6a63.mp4",
             reply_markup=keyboard,
             caption="**[- تم التشغيل 🎵.]({})\n\n**- طلب من الحلو : {}**\n- المجموعه : {}**".format(
                 url, message.from_user.mention(), message.chat.title
             ),
         )
 
-    os.remove("https://graph.org/file/16ad8802968697be7d4e7.jpg")
+    os.remove("https://graph.org/file/5ec87b6ddca7485cf6a63.mp4")
     return await lel.delete()
         
 
